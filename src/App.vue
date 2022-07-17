@@ -3,7 +3,15 @@
     <list v-on:clickEvent="test">
       <list-item :listItem="listItem" v-for="listItem in listItems" :key="listItem.id" ></list-item>
     </list>
+
+    
+    <div>
+      <router-link to="/">ListItem</router-link> |
+      <router-link to="/about">MenuPopup</router-link>
+    </div>
+   <router-view/>
   </div>
+  
 </template>
 
 <script>
