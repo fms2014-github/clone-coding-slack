@@ -1,14 +1,23 @@
 <template>
   <div id="app">
-    <list v-for="listItem in listItems" :key="listItem.id" v-on:clickEvent="test">
-      <list-item :listItem="listItem"></list-item>
+    <list v-on:clickEvent="test">
+      <list-item :listItem="listItem" v-for="listItem in listItems" :key="listItem.id" ></list-item>
     </list>
+
+    
+    <div>
+      <router-link to="/">ListItem</router-link> |
+      <router-link to="/about">MenuPopup</router-link>
+    </div>
+   <router-view/>
   </div>
+  
 </template>
 
 <script>
 import List from '@/components/List.vue'
 import ListItem from '@/components/ListItem.vue'
+
 export default {
   components: { List, ListItem },
   data(){
@@ -21,9 +30,9 @@ export default {
     }
   },
   methods:{
-    test: () => {
+    test() {
       console.log("채널 추가");
-      let len = this.$data.listItems.length;
+      let len = this.$data.listItems.length + 1;
       this.$data.listItems.push("test" + len);
     }
   }
