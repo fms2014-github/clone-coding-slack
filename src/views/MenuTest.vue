@@ -1,6 +1,6 @@
 <template>
 
-  <div class="about">
+  <div class="menu-test">
     <MenuPopup v-for="memuPopup in memuPopups" :key="memuPopup.id">
    <!--   <MenuPopupList :memuPopup="memuPopup"></MenuPopupList>-->
     </MenuPopup>
@@ -13,6 +13,7 @@ import MenuPopup from '@/components/MenuPopup.vue'
 import MenuPopupList from '@/components/MenuPopupList.vue'
 
 export default {
+    name: 'menuTest',
     components: {
       MenuPopup,
       MenuPopupList
