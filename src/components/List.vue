@@ -1,7 +1,7 @@
 <template>
     <ul class="list-component">
       <slot></slot>
-      <li v-once class="add-list" v-on:click="$emit('clickEvent')"><span class="add-icon">+</span> 채널 추가</li>
+      <li @click="addList" class="add-list"><span class="add-icon">+</span> {{ btnContent }}</li>
     </ul>
 </template>
 
@@ -9,11 +9,26 @@
 export default {
   name: 'ListComponent',
   props: {
-    msg: String
+    msg: String,
+    kind: String
   },
-  mounted(){
-    const li = document.querySelector(".add-list");
-    li.addEventListener('click', ()=>{});
+  computed:{
+    btnContent: function(){
+      let btnContent;
+      if(this.$props.kind === 'channel'){
+          btnContent = '채널 추가' 
+      }else if(this.$props.kind === 'directMsg'){
+          btnContent = '팀원 추가'
+      }else{
+          btnContent = '';
+      }
+      return btnContent;
+    }
+  },
+  methods:{
+    addList() {
+      this.$emit('addLisItem');
+    }
   }
 }
 </script>

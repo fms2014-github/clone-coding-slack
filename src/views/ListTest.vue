@@ -1,6 +1,6 @@
 <template>
   <div class="list-test">
-    <list v-on:clickEvent="test" :kind="'directMsg'">
+    <list @addLisItem="addLisItem" :kind="'directMsg'">
       <list-item :kind="'directMsg'" :listItem="listItem" v-for="listItem in listItems" :key="listItem.id" ></list-item>
     </list>
   </div>
@@ -23,7 +23,7 @@ export default {
     }
   },
   methods:{
-    test() {
+    addLisItem() {
       console.log("추가");
       let len = this.$data.listItems.length + 1;
       this.$data.listItems.push("test" + len);
