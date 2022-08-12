@@ -1,7 +1,7 @@
 <template>
     <ul class="list-component">
       <slot></slot>
-      <li class="add-list" v-on:click="$emit('clickEvent')"><span class="add-icon">+</span> {{ btnContent }}</li>
+      <li @click="addList" class="add-list"><span class="add-icon">+</span> {{ btnContent }}</li>
     </ul>
 </template>
 
@@ -25,9 +25,10 @@ export default {
       return btnContent;
     }
   },
-  mounted(){
-    const li = document.querySelector(".add-list");
-    li.addEventListener('click', ()=>{});
+  methods:{
+    addList() {
+      this.$emit('addLisItem');
+    }
   }
 }
 </script>
