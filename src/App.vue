@@ -4,6 +4,7 @@
     <div>
       <router-link to="/menu-test">menuTest</router-link> |
       <router-link to="/list-test">listTest</router-link> |
+      <router-link to="/main-view">mainTest</router-link> |
       <router-link to="/side-sub-menu-test">sideSubMenwTest</router-link>
     </div>
    <router-view/>
@@ -16,5 +17,9 @@
 </script>
 
 <style lang="scss">
-
+*{
+  margin: 0px;
+  padding: 0px;
+  border-width: 0px;
+}
 </style>
