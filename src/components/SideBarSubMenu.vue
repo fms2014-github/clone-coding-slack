@@ -14,8 +14,8 @@
 
 <script>
 export default {
-    date(){
-        return{
+    data() {
+        return {
             notReadList: true,
             allDirectMsgList: true,
             mensionEmotionList: true,
@@ -26,6 +26,9 @@ export default {
             contactList: true,
             appList: true,
         }
+    },
+    mounted(){
+        
     }
 }
 </script>
@@ -33,9 +36,22 @@ export default {
 <style lang="scss" scoped>
 #side-bar-sub-menu{
     .sub-menu-item{
-        :hover{
-            background-color: rgb(80,80,80);
-        }
+        display:block;
     }
+
+    .sub-menu-item:hover, 
+    .sub-menu-item:visited, 
+    .sub-menu-item:link, 
+    .sub-menu-item:active{
+        text-decoration: none;
+        color: black;
+        background-color: none;
+    }
+
+    .sub-menu-item:hover{
+        background-color: rgb(180, 180, 180);
+        mix-blend-mode: multiply;
+    }
+
 }
 </style>
