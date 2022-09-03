@@ -1,21 +1,21 @@
 <template>
   <div id="main-view">
-    <Header />
-    <SideBar />
-    <Main />
+    <custom-header/>
+    <side-bar />
+    <custom-main/>
   </div>
 </template>
 
 <script>
-import Header from '@/layout/Header.vue';
-import Main from '@/layout/Main.vue';
+import CustomHeader from '@/layout/Header.vue';
+import CustomMain from '@/layout/Main.vue';
 import SideBar from '@/layout/SideBar.vue';
 
 export default {
     name: 'mainTest',
     components:{
-        Header,
-        Main,
+        CustomHeader,
+        CustomMain,
         SideBar
     }
 }
