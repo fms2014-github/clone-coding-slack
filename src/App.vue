@@ -14,6 +14,5 @@
 
 </script>
 
-<style lang="scss">
-@import '@/assets/scss/reset.scss';
+<style lang="scss" scoped>
 </style>

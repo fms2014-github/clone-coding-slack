@@ -21,5 +21,9 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+#main-view{
+  display: inline-block;
+  width: 100vw;
+}
 </style>

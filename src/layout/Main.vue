@@ -12,10 +12,9 @@ export default {
 
 <style lang="scss" scoped>
 #main{
-    margin: 0px;
-    padding: 0px;
-    border-width: 0px;
-    height: calc(100vh - 32px);
+    display: inline-block;
+    width: calc(100vw - 200px);
+    height: calc(100vh - 48px);
     background: {
         color: rgb(180, 180, 180);
     }
