@@ -1,11 +1,9 @@
 <template>
-
   <div class="menu-test">
     <MenuPopup v-for="memuPopup in memuPopups" :key="memuPopup.id">
    <!--   <MenuPopupList :memuPopup="memuPopup"></MenuPopupList>-->
     </MenuPopup>
   </div>
-
 </template>
 
 <script>
