@@ -1,0 +1,75 @@
+<template>
+  <div class="search-popup">
+    <div class="search-workspace">
+      <span class="search-icon">검색</span>
+      <input type="text" placeholder="What do you want to search for today?"/>
+      <button class="search-data-del-btn">지우기</button>
+      <button class="fillter">fillter</button>
+      <button class="search-popup-close">X</button>
+    </div>
+    <hr/>
+    <div class="search-support">
+        <search-suggest-vue/>
+    </div>
+    <div class="help-info-message">
+      <p>예상한 결과가 아니였나요? <a href="#">자세히 알아보기</a></p>
+    </div>
+  </div>
+</template>
+
+<script>
+import SearchSuggestVue from './SearchSuggest.vue';
+export default {
+    components:{
+        SearchSuggestVue
+    }
+
+}
+</script>
+
+<style lang="scss" scoped>
+.search-popup{
+    width: calc(100% - 200px);
+    border: {
+        width: 1px;
+        style: solid;
+        color: black;
+        radius: 10px;
+    }
+
+    button {
+        background-color: rgba(255, 255, 255, 0);
+        border: {
+          width: 0px;
+          style: solid;
+        }
+      }
+
+    .search-workspace{
+      margin: 10px;
+      input[type="text"]{
+        width: calc(100% - 153px);
+        height: 100%;
+        font-size: 1rem;
+        border-width: 0px;
+      }
+      
+      .search-data-del-btn{
+        &::after{
+          content: " | ";
+          color: rgba(50,50,50, 0.4)
+        }
+      }
+    }
+    .search-support{
+      margin: 10px 20px;
+    }
+
+    .help-info-message{
+      padding: 10px;
+      border-radius: 0px 0px 10px 10px;
+      text-align: right;
+      background-color: rgba(240, 240, 240, 0.6);
+    }
+}
+</style>

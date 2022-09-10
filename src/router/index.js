@@ -2,7 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import ListTest from '../views/ListTest.vue'
 import MenuTest from '../views/MenuTest.vue'
-import MainTest from '../views/MainTest.vue'
+import MainTest from '../views/MaiTest.vue'
+import SideSubMenuTest from '@/views/SideSubMenuTest.vue'
 
 Vue.use(VueRouter)
 
@@ -24,6 +25,14 @@ const routes = [
     path: '/main-view',
     name: 'mainView',
     component: MainTest,
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+  },
+  {
+    path: '/side-sub-menu-test',
+    name: 'sideSubMenuTest',
+    component: SideSubMenuTest,
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
