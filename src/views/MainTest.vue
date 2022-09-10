@@ -1,15 +1,15 @@
 <template>
   <div id="search-popup-test">
-    <search-popup-vue></search-popup-vue>
+    <search-box-vue></search-box-vue>
   </div>
 </template>
 
 <script>
-import SearchPopupVue from '@/components/SearchPopup.vue';
+import SearchBoxVue from '@/components/SearchBox.vue';
 export default {
     name: 'mainTest',
     components:{
-      SearchPopupVue
+      SearchBoxVue
     }
 }
 </script>

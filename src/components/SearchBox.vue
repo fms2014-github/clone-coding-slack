@@ -3,6 +3,7 @@
     <div class="search-workspace">
       <span class="search-icon">검색</span>
       <input type="text" placeholder="What do you want to search for today?"/>
+      <button class="search-data-del-btn">지우기</button>
       <button class="fillter">fillter</button>
       <button class="search-popup-close">X</button>
     </div>
@@ -28,11 +29,47 @@ export default {
 
 <style lang="scss" scoped>
 .search-popup{
-    width: 60%;
+    width: calc(100% - 200px);
     border: {
         width: 1px;
         style: solid;
         color: black;
+        radius: 10px;
+    }
+
+    button {
+        background-color: rgba(255, 255, 255, 0);
+        border: {
+          width: 0px;
+          style: solid;
+        }
+      }
+
+    .search-workspace{
+      margin: 10px;
+      input[type="text"]{
+        width: calc(100% - 153px);
+        height: 100%;
+        font-size: 1rem;
+        border-width: 0px;
+      }
+      
+      .search-data-del-btn{
+        &::after{
+          content: " | ";
+          color: rgba(50,50,50, 0.4)
+        }
+      }
+    }
+    .search-support{
+      margin: 10px 20px;
+    }
+
+    .help-info-message{
+      padding: 10px;
+      border-radius: 0px 0px 10px 10px;
+      text-align: right;
+      background-color: rgba(240, 240, 240, 0.6);
     }
 }
 </style>
