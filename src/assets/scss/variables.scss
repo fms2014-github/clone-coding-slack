@@ -1,0 +1,31 @@
+/*
+SCSS 공통 설정 값 상수들 
+상수 선언 방법 -> $[변수명, kebab-case]: [값]
+
+예시)
+$exclude-width: 120px;
+$height-200: 200;
+$font-size-12pt: 12pt;
+$default-color: rgb(255, 255, 255);
+
+상수 사용 방법 -> 선언명과 똑같이 사용
+
+예시) - 상단의 변수 선언 예시와 연결 됨
+p {
+  background-color: $default-color;
+  width: calc(100% - #{$exclude-width});
+  height: $height-200px
+  font-size: $font-size-12pt;
+}
+*/
+
+$main-background-color: rgb(63, 14, 64);
+
+$disable-state-color-type-light: rgb(130, 130, 130);
+$disable-state-color-type-dark: rgb(100, 100, 100);
+
+$selected-color: rgb(17, 100, 163);
+
+$hover-color-type-light: rgba(255, 255, 255, 0.3);
+$hover-color-type-dark: rgba(0, 0, 0, 0.3);
+$hover-color-for-search-box: rgb(17, 100, 163);
