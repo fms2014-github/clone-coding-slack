@@ -1,15 +1,22 @@
 <template>
-  <div id="search-popup-test">
-    <search-box-vue></search-box-vue>
+  <div id="main-view">
+    <custom-header/>
+    <side-bar />
+    <custom-main/>
   </div>
 </template>
 
 <script>
-import SearchBoxVue from '@/components/SearchBox.vue';
+import CustomHeader from '@/layout/Header.vue';
+import CustomMain from '@/layout/Main.vue';
+import SideBar from '@/layout/SideBar.vue';
+
 export default {
     name: 'mainTest',
     components:{
-      SearchBoxVue
+        CustomHeader,
+        CustomMain,
+        SideBar
     }
 }
 </script>
@@ -17,6 +24,6 @@ export default {
 <style lang="scss">
 #main-view{
   display: inline-block;
-  width: 100vw;
+  width: $root-width;
 }
 </style>
