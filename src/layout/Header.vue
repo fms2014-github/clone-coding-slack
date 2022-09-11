@@ -46,14 +46,21 @@ header{
   display: flex;
   justify-items: center;
   align-items: center;
-  width: 100vw;
+  width: calc(100% - 20px);
+  padding: 0px 10px;
   height: 48px;
   position: relative;
-  background: {
-      color: rgb(140, 140, 140);
+  background-color: $main-background-color;
+
+  .search-box{
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
   }
+
   .workspace-control-panel{
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
     flex-grow: 8;
@@ -71,20 +78,19 @@ header{
       .search-workspace{
         position: absolute;
         top: 50%;
-        right: 0px;
+        right: 10px;
         transform: translateY(-50%);
       }
       .fillter{
         position: absolute;
         top: 50%;
-        right: 40px;
+        right: 50px;
         transform: translateY(-50%);
         cursor: pointer;
       }
       #search-workspace-btn {
         width: 100%;
         height: 32px;
-        margin-left: 12px;
         text-align: left;
         line-height: 32px;
         padding: 0px 0px 0px 4px;
@@ -101,18 +107,7 @@ header{
       }
     }
   }
-  .search-box{
-    position: absolute;
-    top: 0px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  .system-menu-btn-wrap{
-    flex-grow: 1;
-    padding: 15px;
-  }
   .etc-panel{
-    flex-grow: 1;
     display: flex;
     flex-direction: row-reverse;
     gap: 0px 10px;

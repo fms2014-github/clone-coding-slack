@@ -40,7 +40,8 @@ export default {
 
 <style lang="scss" scoped>
 .search-box{
-    width: calc(100% - 250px);
+    width: calc(100% - 600px);
+    max-width: 900px;
     background-color: white;
     border: {
         width: 1px;
@@ -61,7 +62,7 @@ export default {
     .search-workspace{
       margin: 10px;
       input[type="text"]{
-        width: calc(100% - 156px);
+        width: calc(100% - 157px);
         height: 100%;
         font-size: 1rem;
         border-width: 0px;
