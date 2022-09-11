@@ -1,11 +1,11 @@
 <template>
-  <div class="search-popup">
+  <div class="search-box" v-if="isEnable">
     <div class="search-workspace">
       <span class="search-icon">검색</span>
       <input type="text" placeholder="What do you want to search for today?"/>
       <button class="search-data-del-btn">지우기</button>
       <button class="fillter">fillter</button>
-      <button class="search-popup-close">X</button>
+      <button class="search-box-close" @click="closeBox">X</button>
     </div>
     <hr/>
     <div class="search-support">
@@ -20,16 +20,28 @@
 <script>
 import SearchSuggestVue from './SearchSuggest.vue';
 export default {
-    components:{
-        SearchSuggestVue
+  components:{
+      SearchSuggestVue
+  },
+  props:{
+    isEnable: {
+      type: Boolean,
+      require: true
     }
-
+  },
+  methods:{
+    closeBox(){
+      this.$emit('closeBoxEvent')
+    }
+  }
+  
 }
 </script>
 
 <style lang="scss" scoped>
-.search-popup{
-    width: calc(100% - 200px);
+.search-box{
+    width: calc(100% - 250px);
+    background-color: white;
     border: {
         width: 1px;
         style: solid;
@@ -39,6 +51,7 @@ export default {
 
     button {
         background-color: rgba(255, 255, 255, 0);
+        cursor: pointer;
         border: {
           width: 0px;
           style: solid;
@@ -48,7 +61,7 @@ export default {
     .search-workspace{
       margin: 10px;
       input[type="text"]{
-        width: calc(100% - 153px);
+        width: calc(100% - 156px);
         height: 100%;
         font-size: 1rem;
         border-width: 0px;

@@ -8,18 +8,35 @@
       <div class="search-wrap">
         <span class="search-workspace">검색</span>
         <button class="fillter">fillter</button>
-        <button id="search-workspace-btn">새 워크스페이스 검색</button>
+        <button id="search-workspace-btn" @click="toggle">새 워크스페이스 검색</button>
       </div>
     </div>
     <div class="etc-panel">
       <div class="help-icon"><span>?</span></div>
       <div class="user-profile"><img src="https://via.placeholder.com/32x32" /></div>
     </div>
+    <search-box-vue :isEnable="doSearch" @closeBoxEvent="toggle"></search-box-vue>
   </header>
 </template>
 
 <script>
+import SearchBoxVue from '@/components/SearchBox.vue';
+
 export default {
+  data(){
+    return {
+      doSearch: false
+    }
+  },
+  components:{
+    SearchBoxVue
+  },
+  methods:{
+    toggle(){
+      console.log(this.doSearch);
+      this.doSearch = this.doSearch ? false : true;
+    }
+  }
 
 }
 </script>
@@ -31,6 +48,7 @@ header{
   align-items: center;
   width: 100vw;
   height: 48px;
+  position: relative;
   background: {
       color: rgb(140, 140, 140);
   }
@@ -82,6 +100,12 @@ header{
         }
       }
     }
+  }
+  .search-box{
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
   }
   .system-menu-btn-wrap{
     flex-grow: 1;
