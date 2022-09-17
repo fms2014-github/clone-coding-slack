@@ -1,11 +1,19 @@
 <template>
   <div id="sidebar">
-    test
-  </div>
+    <div class="menuItem">
+      Slack 만들기
+    </div>
+    <MenuPopup class="MenuPstn"></MenuPopup>
+  </div>  
 </template>
 
 <script>
+import MenuPopup from '../components/MenuPopup.vue'
+
 export default {
+  components: {
+    MenuPopup
+  }
 
 }
 </script>
@@ -18,8 +26,15 @@ export default {
     width: 20vw;
     height: calc(100vh - 32px);
     background: {
-        color: rgb(160, 160, 160);
+        color: $main-background-color;
     }
     float: left;
+    .menuItem {
+     // font-color: $main-font-color-white;
+    }
+}
+.MenuPstn {
+  position: relative;
+  left: 463px;
 }
 </style>
