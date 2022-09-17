@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "esnext",
+    "target": "es6",
+    "module": "ES6",
     "baseUrl": "./",
     "moduleResolution": "node",
+    "jsx": "preserve",
     "paths": {
       "@/*": [
         "src/*"
@@ -14,6 +15,7 @@
       "dom",
       "dom.iterable",
       "scripthost"
-    ]
+    ],
+    "jsx":"preserve"
   }
 }
