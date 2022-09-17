@@ -17,7 +17,7 @@ export default {
 <style lang="scss" scoped>
 .search-suggest {
   p {
-    color: rgb(180, 180, 180);
+    color: $main-background-color;
     font-weight: 700;
     padding: 5px;
   }
@@ -32,7 +32,8 @@ export default {
     }
 
     &:hover{
-      background-color: rgb(120, 120, 120);
+      background-color: rgb(255,255,255);
+      mix-blend-mode: darken;
       color: rgb(240, 240, 240);
     }
   }

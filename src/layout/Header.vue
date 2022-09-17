@@ -1,21 +1,21 @@
 <template>
   <header>
-    <div class="system-menu-btn-wrap"><span class="system-menu-btn">=</span></div>
+    <div class="system-menu-btn-wrap" @click="menuOpen"><span class="system-menu-btn">=</span></div>
     <div class="workspace-control-panel">
-      <div class="prev"><span>&lt;-</span></div>
-      <div class="next"><span>-&gt;</span></div>
-      <div class="lastest"><span>최근</span></div>
+      <div class="prev" @click="prev"><span>&lt;-</span></div>
+      <div class="next" @click="next"><span>-&gt;</span></div>
+      <div class="lastest" @click="lastest"><span>최근</span></div>
       <div class="search-wrap">
         <span class="search-workspace">검색</span>
-        <button class="fillter">fillter</button>
-        <button id="search-workspace-btn" @click="toggle">새 워크스페이스 검색</button>
+        <button class="fillter" @click="fillter">fillter</button>
+        <button id="search-workspace-btn" @click="toggle">{{searchText}}</button>
       </div>
     </div>
     <div class="etc-panel">
       <div class="help-icon"><span>?</span></div>
       <div class="user-profile"><img src="https://via.placeholder.com/32x32" /></div>
     </div>
-    <search-box-vue :isEnable="doSearch" @closeBoxEvent="toggle"></search-box-vue>
+    <search-box-vue :isEnable="doSearch" @close-box-event="toggle"></search-box-vue>
   </header>
 </template>
 
@@ -25,16 +25,40 @@ import SearchBoxVue from '@/components/SearchBox.vue';
 export default {
   data(){
     return {
-      doSearch: false
+      doSearch: false,
+      searchText: '새 워크스페이크 검색'
     }
   },
   components:{
     SearchBoxVue
   },
   methods:{
-    toggle(){
+    toggle(inputText){
       console.log(this.doSearch);
       this.doSearch = this.doSearch ? false : true;
+      if(this._StringEmpty(inputText)){
+         this.searchText = '새 워크스페이크 검색';
+      }else{
+        this.searchText = '검색: ' + inputText;
+      }
+    },
+    _StringEmpty(str){
+      return str === '' || str === undefined || str === null;
+    },
+    menuOpen() {
+      alert("메뉴");
+    },
+    prev() {
+      alert("이전");
+    },
+    next() {
+      alert("다음");
+    },
+    lastest() {
+      alert("최근 내역");
+    },
+    fillter() {
+      alert("필터링");
     }
   }
 
@@ -51,11 +75,14 @@ header{
   height: 48px;
   position: relative;
   background-color: $main-background-color;
-
+  color: $main-font-color-white;
+  .system-menu-btn-wrap{
+    cursor: pointer;
+  }
   .search-box{
     position: absolute;
     top: 0px;
-    left: 50%;
+    left: calc(50% + 80px);
     transform: translateX(-50%);
   }
 
@@ -74,6 +101,9 @@ header{
 
       button{
         cursor: pointer;
+        color: $main-font-color-white;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-width: 0px;
       }
       .search-workspace{
         position: absolute;
@@ -87,6 +117,7 @@ header{
         right: 50px;
         transform: translateY(-50%);
         cursor: pointer;
+        background-color: unset;
       }
       #search-workspace-btn {
         width: 100%;
