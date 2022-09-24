@@ -1,9 +1,9 @@
 <template>
   <div id="sidebar">
-    <div class="menuItem">
+    <div class="menuItem" @click="subMenuClick">
       Slack 만들기
     </div>
-    <MenuPopup class="MenuPstn"></MenuPopup>
+    <MenuPopup v-if="MenuPstn=true" class="MenuPstn"></MenuPopup>
   </div>  
 </template>
 
@@ -13,24 +13,25 @@ import MenuPopup from '../components/MenuPopup.vue'
 export default {
   components: {
     MenuPopup
+  },
+  methods: {
+    subMenuClick() {
+      console.log('fdsa');
+    }
   }
-
 }
 </script>
 
 <style lang="scss" scoped>
 #sidebar{
-    margin: 0px;
-    padding: 0px;
-    border-width: 0px;
-    width: 20vw;
-    height: calc(100vh - 32px);
+    display: inline-block;
+    width: 200px;
+    height: calc(100vh - 48px);
     background: {
         color: $main-background-color;
     }
-    float: left;
     .menuItem {
-     // font-color: $main-font-color-white;
+      color: $main-font-color-white;
     }
 }
 .MenuPstn {
