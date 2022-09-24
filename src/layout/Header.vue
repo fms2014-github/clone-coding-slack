@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="custom-header">
     <div class="system-menu-btn-wrap" @click="menuOpen"><span class="system-menu-btn">=</span></div>
     <div class="workspace-control-panel">
       <div class="prev" @click="prev"><span>&lt;-</span></div>
@@ -23,6 +23,7 @@
 import SearchBoxVue from '@/components/SearchBox.vue';
 
 export default {
+  name: "header",
   data(){
     return {
       doSearch: false,
@@ -66,7 +67,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-header{
+.custom-header {
   display: flex;
   justify-items: center;
   align-items: center;

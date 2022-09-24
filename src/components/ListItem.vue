@@ -38,7 +38,12 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+
+li{
+  width: 200px;
+  display: inline-block;
+}
 .channel::after{
   content:'#'
 }

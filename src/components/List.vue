@@ -7,7 +7,6 @@
 
 <script>
 export default {
-  name: 'ListComponent',
   props: {
     msg: String,
     kind: String
@@ -36,6 +35,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .list-component{
+  display: inline-block;
+  width: 200px;
   padding: 0px;
   margin: 0px;
   list-style-type: none;
