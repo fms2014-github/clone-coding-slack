@@ -3,6 +3,7 @@
     <div class="menuItem" @click="subMenuClick">
       Slack 만들기
     </div>
+    <side-sub-menu-vue />
     <list @addLisItem="addLisItem" :kind="'channel'">
       <list-item :kind="'channel'" :channelnMessageNo="listItem.channelnMessageNo" :listItem="listItem.name" v-for="listItem in listItems" :key="listItem.id" ></list-item>
     </list>
@@ -18,6 +19,7 @@
 import MenuPopup from '../components/MenuPopup.vue'
 import List from '@/components/List.vue'
 import ListItem from '@/components/ListItem.vue'
+import SideSubMenuVue from "@/components/SideBarSubMenu.vue";
 
 export default {
   data() {
@@ -41,7 +43,8 @@ export default {
   components: {
     MenuPopup,
     List,
-    ListItem
+    ListItem,
+    SideSubMenuVue
   },
   methods: {
     subMenuClick() {
@@ -66,6 +69,8 @@ export default {
     display: inline-block;
     width: 200px;
     height: calc(100vh - 48px);
+    color: $gray-color-190;
+    font-weight: 500;
     background: {
         color: $main-background-color;
     }
@@ -73,9 +78,11 @@ export default {
       color: $main-font-color-white;
     }
     vertical-align: top;
+
+   MenuPstn {
+    position: relative;
+    left: 20px;
+  }
 }
-.MenuPstn {
-  position: relative;
-  left: 20px;
-}
+
 </style>
