@@ -44,13 +44,12 @@ export default {
     .sub-menu-item:link, 
     .sub-menu-item:active{
         text-decoration: none;
-        color: black;
+        color: $gray-color-190;
         background-color: none;
     }
 
     .sub-menu-item:hover{
-        background-color: rgb(180, 180, 180);
-        mix-blend-mode: multiply;
+        background-color: rgba(0, 0, 0, 0.2);
     }
 
 }
