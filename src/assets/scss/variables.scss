@@ -22,12 +22,26 @@ $root-width: calc(100vw - (100vw - 100%));
 $main-background-color: rgb(63, 14, 64);
 $main-font-color-white: rgb(250, 250, 250);
 $main-font-color-black: rgb(50, 50, 50);
-$main-font-color-gray: rgb(120, 120, 120);
 
-$disable-state-color-type: rgb(130, 130, 130);
+$gray-color-220: rgb(220, 220, 220);
+$gray-color-210: rgb(210, 210, 210);
+$gray-color-200: rgb(200, 200, 200);
+$gray-color-190: rgb(190, 190, 190);
+$gray-color-180: rgb(180, 180, 180);
+$gray-color-170: rgb(170, 170, 170);
+$gray-color-160: rgb(160, 160, 160);
+$gray-color-150: rgb(150, 150, 150);
+$gray-color-140: rgb(140, 140, 140);
+$gray-color-130: rgb(130, 130, 130);
+$gray-color-120: rgb(120, 120, 120);
+$gray-color-110: rgb(110, 110, 110);
+$gray-color-100: rgb(100, 100, 100);
+$main-tag-box-color: rgb(232,245,250);
 
-$selected-color: rgb(17, 100, 163);
+$disable-state-color-type1: rgb(130, 130, 130);
+
+$selected-color-type1: rgb(17, 100, 163);
 
 $hover-color-type-light: rgba(255, 255, 255, 0.3);
 $hover-color-type-dark: rgba(0, 0, 0, 0.3);
-$hover-color-for-search-box: rgb(17, 100, 163);
+$link-color-type1: rgb(75, 137, 184);

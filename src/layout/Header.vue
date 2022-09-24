@@ -82,7 +82,7 @@ header{
   .search-box{
     position: absolute;
     top: 0px;
-    left: calc(50% + 80px);
+    left: calc(50% + 120px);
     transform: translateX(-50%);
   }
 
