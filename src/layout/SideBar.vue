@@ -1,5 +1,8 @@
 <template>
   <div id="sidebar">
+    <div class="menuItem" @click="subMenuClick">
+      Slack 만들기
+    </div>
     <list @addLisItem="addLisItem" :kind="'channel'">
       <list-item :kind="'channel'" :channelnMessageNo="listItem.channelnMessageNo" :listItem="listItem.name" v-for="listItem in listItems" :key="listItem.id" ></list-item>
     </list>
@@ -7,17 +10,19 @@
     <list @addLisItem="addLisItem" :kind="'directMsg'">
       <list-item :kind="'directMsg'" :channelnMessageNo="listItem.channelnMessageNo" :listItem="listItem.name" v-for="listItem in listItems" :key="listItem.id" ></list-item>
     </list>
-  </div>
+    <MenuPopup v-if="MenuPstn" class="MenuPstn"></MenuPopup>
+  </div>  
 </template>
 
 <script>
+import MenuPopup from '../components/MenuPopup.vue'
 import List from '@/components/List.vue'
 import ListItem from '@/components/ListItem.vue'
+
 export default {
-  name: "sidebar",
-  components: { List, ListItem },
-  data(){
-    return{
+  data() {
+    return {
+      MenuPstn: false,
       listItems:[{
         name: "test1",
         channelnMessageNo: "4523"
@@ -31,10 +36,16 @@ export default {
         channelnMessageNo: "5413"
       },
       ],
-      
     }
   },
-  methods:{
+  components: {
+    MenuPopup
+  },
+  methods: {
+    subMenuClick() {
+      console.log('fdsa');
+      this.MenuPstn = !this.MenuPstn;
+    },
     addLisItem() {
       console.log("추가");
       let len = this.$data.listItems.length + 1;
@@ -54,8 +65,15 @@ export default {
     width: 200px;
     height: calc(100vh - 48px);
     background: {
-        color: rgb(160, 160, 160);
+        color: $main-background-color;
+    }
+    .menuItem {
+      color: $main-font-color-white;
     }
     vertical-align: top;
+}
+.MenuPstn {
+  position: relative;
+  left: 20px;
 }
 </style>
