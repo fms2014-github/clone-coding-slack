@@ -1,6 +1,6 @@
 <template>
-  <li>
-    <span :class="listIcon"></span> {{listItem}}
+  <li @click="routeToSection()">
+    <span :class="listIcon" ></span> {{listItem}}
   </li>
 </template>
 
@@ -8,7 +8,18 @@
 export default {
     props:{
         listItem: String,
-        kind: String
+        kind: String,
+        channelnMessageNo: String,
+    },
+    methods:{
+      routeToSection(){
+        let routeParam = {
+          name: this.$props.kind, 
+          [(this.$props.kind + "Id")]: this.$props.channelnMessageNo
+        }
+        console.log(routeParam)
+        this.$router.push(routeParam);
+      }
     },
     computed:{
       listIcon:function(){
@@ -27,7 +38,12 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+
+li{
+  width: 200px;
+  display: inline-block;
+}
 .channel::after{
   content:'#'
 }

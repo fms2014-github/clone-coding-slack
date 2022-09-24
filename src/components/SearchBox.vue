@@ -3,7 +3,7 @@
     <div class="search-workspace">
       <span class="search-icon">검색</span>
       <input v-model="inputText" type="text" placeholder="What do you want to search for today?"/>
-      <button class="search-data-del-btn">지우기</button>
+      <button class="search-data-del-btn" @click="delText">지우기</button>
       <button class="fillter">fillter</button>
       <button class="search-box-close" @click="closeBox">X</button>
     </div>
@@ -37,6 +37,9 @@ export default {
   methods:{
     closeBox(){
       this.$emit('close-box-event', this.inputText)
+    },
+    delText(){
+      this.inputText = '';
     }
   }
   
@@ -45,15 +48,16 @@ export default {
 
 <style lang="scss" scoped>
 .search-box{
-    width: calc(100% - 600px);
-    max-width: 900px;
+    width: calc(100% - 550px);
+    max-width: 1000px;
     background-color: white;
     border: {
         width: 1px;
         style: solid;
-        color: black;
+        color: $gray-color-180;
         radius: 10px;
     }
+    box-shadow: 0px 0px 16px -4px $gray-color-100;
 
     button {
         background-color: rgba(255, 255, 255, 0);
@@ -66,10 +70,11 @@ export default {
 
     .search-workspace{
       margin: 10px;
+      height: 32px;
       input[type="text"]{
         width: calc(100% - 157px);
         height: 100%;
-        font-size: 1rem;
+        font-size: 0.9rem;
         border-width: 0px;
       }
       .search-icon{
@@ -82,6 +87,13 @@ export default {
         }
       }
     }
+
+    hr {
+      background-color: $gray-color-220;
+      height: 1px;
+      border-width: 0px;
+    }
+
     .search-support{
       margin: 10px 20px;
     }
@@ -91,6 +103,23 @@ export default {
       border-radius: 0px 0px 10px 10px;
       text-align: right;
       background-color: rgba(240, 240, 240, 0.6);
+      p {
+        padding: 4px 12px;
+        font: {
+          size: 0.75rem;
+          weight: 700;
+        }
+        color: $gray-color-110;
+      }
+
+      a {
+        text-decoration: none;
+        color: $link-color-type1;
+
+        &:hover{
+          text-decoration: underline;
+        }
+      }
     }
 }
 </style>
