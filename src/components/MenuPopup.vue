@@ -23,15 +23,15 @@
       <span class="menu-list-component outline">
         환경설정
       </span>
-      <span data-detail="setting" v-on:mouseover="SubMenu($event)" v-on:mouseout="SubMenuClose($event)" class="menu-list-component outline">
+      <span data-detail="setting" v-on:mouseover="SubMenu($event)" @mouseout="SubMenuClose()" class="menu-list-component outline">
         설정 및 관리
       </span>
       <div class="under-line" />
-      <span data-detail="tool" v-on:mouseover="SubMenu($event)" v-on:mouseout="SubMenuClose($event)" class="menu-list-component outline">
+      <span data-detail="tool" v-on:mouseover="SubMenu($event)" @mouseout="SubMenuClose()" class="menu-list-component outline">
         도구
       </span>
       <div class="under-line" />
-      <span data-detail="add" v-on:mouseover="SubMenu($event)" v-on:mouseout="SubMenuClose($event)" class="menu-list-component outline">
+      <span data-detail="add" v-on:mouseover="SubMenu($event)" @mouseout="SubMenuClose()" class="menu-list-component outline">
         워크스페이스 추가
       </span>
       <div class="under-line" />
@@ -54,7 +54,7 @@ import SubMenuPopupVue from './SubMenuPopup.vue'
 export default {
   data() {
    return {
-     subMenuIdx:""
+     subMenuIdx:"",
    }
   },
   components: {
@@ -79,11 +79,12 @@ export default {
       }
     },
     SubMenuClose(e) {
-      this.subMenuIdx='';
-      document.getElementsByClassName('child')[0].classList.remove('subMenu1');
-      document.getElementsByClassName('child')[0].classList.remove('subMenu2');
-      document.getElementsByClassName('child')[0].classList.remove('subMenu3');
-    }
+        this.subMenuIdx='';
+        document.getElementsByClassName('child')[0].classList.remove('subMenu1');
+        document.getElementsByClassName('child')[0].classList.remove('subMenu2');
+        document.getElementsByClassName('child')[0].classList.remove('subMenu3');
+      
+    },
   }
 }
 </script>
@@ -93,6 +94,7 @@ export default {
   z-index: 50;
   float: left;
   min-width: 12rem;
+  background-color: white;
   .under-line {
     height: 0px;
     margin-left: 1rem;
@@ -118,20 +120,20 @@ export default {
 
 .subMenu1 {
   position:absolute;
-  left: 463px;
-  top: 150px;
+  left: 200px;
+  top: 193px;
 }
 
 .subMenu2 {
   position:absolute;
-  left: 463px;
-  top: 187px;
+  left: 200px;
+  top: 231px;
 }
 
 .subMenu3 {
   position:absolute;
-  left: 463px;
-  top: 225px;
+  left: 200px;
+  top: 267px;
 }
 
 </style>

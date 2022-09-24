@@ -3,7 +3,7 @@
     <div class="menuItem" @click="subMenuClick">
       Slack 만들기
     </div>
-    <MenuPopup v-if="MenuPstn=true" class="MenuPstn"></MenuPopup>
+    <MenuPopup v-if="MenuPstn" class="MenuPstn"></MenuPopup>
   </div>  
 </template>
 
@@ -11,12 +11,18 @@
 import MenuPopup from '../components/MenuPopup.vue'
 
 export default {
+  data() {
+    return {
+      MenuPstn: false
+    }
+  },
   components: {
     MenuPopup
   },
   methods: {
     subMenuClick() {
       console.log('fdsa');
+      this.MenuPstn = !this.MenuPstn;
     }
   }
 }
@@ -36,6 +42,6 @@ export default {
 }
 .MenuPstn {
   position: relative;
-  left: 463px;
+  left: 20px;
 }
 </style>

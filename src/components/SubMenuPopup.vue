@@ -54,16 +54,18 @@ export default {
   props: {
     subMenu: String
   },
+  methods:{
+  
+  }
 }
 </script>
-
-
 
 <style scoped lang="scss">
 .menu-component {
   z-index: 50;
   float: left;
   min-width: 12rem;
+  background-color: white;
   .under-line {
     height: 0px;
     margin-left: 1rem;
