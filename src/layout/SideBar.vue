@@ -39,7 +39,9 @@ export default {
     }
   },
   components: {
-    MenuPopup
+    MenuPopup,
+    List,
+    ListItem
   },
   methods: {
     subMenuClick() {
