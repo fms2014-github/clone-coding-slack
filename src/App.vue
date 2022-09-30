@@ -1,20 +1,24 @@
 <template>
   <div id="app">
-    <div>
-      <router-link to="/menu-test">menuTest</router-link> |
-      <router-link to="/list-test">listTest</router-link> |
-      <router-link to="/main-view">mainTest</router-link> |
-      <router-link to="/side-sub-menu-test">sideSubMenwTest</router-link>
-    </div>
-   <router-view/>
+    <custom-header />
+    <side-bar class="test1"/>
+    <custom-main  class="test2"/>
   </div>
-  
 </template>
 
 <script>
+import CustomHeader from '@/layout/Header.vue';
+import CustomMain from '@/layout/Main.vue';
+import SideBar from '@/layout/SideBar.vue';
 
+export default {
+    components:{
+        CustomHeader,
+        CustomMain,
+        SideBar
+    }
+}
 </script>
 
-<style lang="scss">
-@import '@/assets/scss/reset.scss';
+<style lang="scss" scoped>
 </style>

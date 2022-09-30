@@ -6,6 +6,7 @@ module.exports = defineConfig({
       sass: {
         additionalData: `
           @import "@/assets/scss/reset.scss";
+          @import "@/assets/scss/variables.scss";
         `
       }
     }
