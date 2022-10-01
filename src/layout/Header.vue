@@ -6,9 +6,9 @@
       <div class="next" @click="next"><span>-&gt;</span></div>
       <div class="lastest" @click="lastest"><span>최근</span></div>
       <div class="search-wrap">
-        <span class="search-workspace">검색</span>
+        <span class="search-workspace" @click="toggle">검색</span>
         <button class="fillter" @click="fillter">fillter</button>
-        <button id="search-workspace-btn" @click="toggle">{{searchText}}</button>
+        <button class="search-workspace-btn" @click="toggle">{{searchText}}</button>
       </div>
     </div>
     <div class="etc-panel">
@@ -82,8 +82,8 @@ header{
   .search-box{
     position: absolute;
     top: 0px;
-    left: calc(50% + 120px);
-    transform: translateX(-50%);
+    left: 10%;
+    transform: translateX(30%);
   }
 
   .workspace-control-panel{
@@ -106,6 +106,11 @@ header{
         border-width: 0px;
       }
       .search-workspace{
+        cursor: pointer;
+        color: $main-font-color-white;
+        border-width: 0px;
+      }
+      .search-workspace{
         position: absolute;
         top: 50%;
         right: 10px;
@@ -119,7 +124,7 @@ header{
         cursor: pointer;
         background-color: unset;
       }
-      #search-workspace-btn {
+      .search-workspace-btn {
         width: 100%;
         height: 32px;
         text-align: left;
