@@ -1,7 +1,7 @@
 <template>
   <div class="list-test">
-    <list v-on:clickEvent="test" :kind="'directMsg'">
-      <list-item :kind="'directMsg'" :listItem="listItem" v-for="listItem in listItems" :key="listItem.id" ></list-item>
+    <list @addLisItem="addLisItem" :kind="'directMsg'">
+      <list-item :kind="'directMsg'" :channelnMessageNo="listItem.channelnMessageNo" :listItem="listItem.name" v-for="listItem in listItems" :key="listItem.id" ></list-item>
     </list>
   </div>
 </template>
@@ -15,18 +15,31 @@ export default {
   components: { List, ListItem },
   data(){
     return{
-      listItems:[
-        'test1',
-        'test2',
-        'test3'
-      ]
+      listItems:[{
+        name: "test1",
+        channelnMessageNo: "4523"
+      },
+      {
+        name: "test2",
+        channelnMessageNo: "4334"
+      },
+      {
+        name: "test3",
+        channelnMessageNo: "5413"
+      },
+      ],
+      
     }
   },
   methods:{
-    test() {
+    addLisItem() {
       console.log("추가");
       let len = this.$data.listItems.length + 1;
-      this.$data.listItems.push("test" + len);
+      let roomData = {
+        name: "test" + len,
+        channelnMessageNo: "" + Math.ceil(Math.random() * 10000)
+      }
+      this.$data.listItems.push(roomData);
     }
   }
 }
