@@ -15,7 +15,7 @@ const actions = {
 }
 
 
-default export {
+export default {
   namespaced: true,
   state,
   getter,

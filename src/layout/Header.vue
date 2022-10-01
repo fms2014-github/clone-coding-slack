@@ -23,7 +23,6 @@
 import SearchBoxVue from '@/components/SearchBox.vue';
 
 export default {
-  name: "header",
   data(){
     return {
       doSearch: false,

@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import Interaction from './modules/Interaction'
 
 Vue.use(Vuex)
 
