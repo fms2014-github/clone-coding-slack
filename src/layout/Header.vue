@@ -16,22 +16,26 @@
       <div class="user-profile"><img src="https://via.placeholder.com/32x32" /></div>
     </div>
     <search-box-vue :isEnable="doSearch" @close-box-event="toggle"></search-box-vue>
+    <Filltering v-if="doFillter"/>
   </header>
 </template>
 
 <script>
 import SearchBoxVue from '@/components/SearchBox.vue';
+import Filltering from '@/components/Filltering.vue';
 
 export default {
   data(){
     return {
       doSearch: false,
-      searchText: '새 워크스페이크 검색'
+      searchText: '새 워크스페이크 검색',
+      doFillter: false
     }
   },
   components:{
-    SearchBoxVue
-  },
+    SearchBoxVue,
+    Filltering
+},
   methods:{
     toggle(inputText){
       console.log(this.doSearch);
@@ -58,7 +62,7 @@ export default {
       alert("최근 내역");
     },
     fillter() {
-      alert("필터링");
+      this.doFillter = !this.doFillter;
     }
   }
 
@@ -70,20 +74,19 @@ export default {
   display: flex;
   justify-items: center;
   align-items: center;
-  width: calc(100% - 20px);
-  padding: 0px 10px;
+  width: 100%;
   height: 48px;
-  position: relative;
   background-color: $main-background-color;
   color: $main-font-color-white;
   .system-menu-btn-wrap{
     cursor: pointer;
+    margin-left: 10px;
   }
   .search-box{
     position: absolute;
     top: 0px;
-    left: 10%;
-    transform: translateX(30%);
+    left: calc(50% + 100px);
+    transform: translateX(-50%);
   }
 
   .workspace-control-panel{
@@ -97,7 +100,7 @@ export default {
     }
     .search-wrap{
       position: relative;
-      flex-basis: 40%;
+      flex-basis: 35%;
 
       button{
         cursor: pointer;
@@ -148,6 +151,7 @@ export default {
     flex-direction: row-reverse;
     gap: 0px 10px;
     align-items: center;
+    margin-right: 10px;
     .help-icon{
       order: 2;
     }

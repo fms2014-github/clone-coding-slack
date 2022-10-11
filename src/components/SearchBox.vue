@@ -48,7 +48,7 @@ export default {
 
 <style lang="scss" scoped>
 .search-box{
-    width: calc(100% - 520px);
+    width: calc(100% - 500px);
     max-width: 1000px;
     min-width: 400px;
     background-color: white;
