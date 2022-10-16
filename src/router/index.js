@@ -4,6 +4,8 @@ import ListTest from '../views/ListTest.vue'
 import MenuTest from '../views/MenuTest.vue'
 import MainTest from '../views/MainTest.vue'
 import SideSubMenuTest from '@/views/SideSubMenuTest.vue'
+import Channel from '@/views/Chennal.vue'
+import DirectMsg from '@/views/DirectMsg.vue'
 
 Vue.use(VueRouter)
 
@@ -45,6 +47,22 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
   },
+  {
+    path: '/chennal/:channelId',
+    name: 'channel',
+    component: Channel,
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+  },
+  {
+    path: '/directMsg/:directMsgId',
+    name: 'directMsg',
+    component: DirectMsg,
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+  },
 ]
 
 const router = new VueRouter({
@@ -52,5 +70,12 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+
+const originalPush = VueRouter.prototype.push;
+VueRouter.prototype.push = function push(location) {
+	return originalPush.call(this, location).catch(err => {
+		if (err.name !== 'NavigationDuplicated') throw err;
+	});
+};
 
 export default router

@@ -15,7 +15,7 @@ export default {
       routeToSection(){
         let routeParam = {
           name: this.$props.kind, 
-          [(this.$props.kind + "Id")]: this.$props.channelnMessageNo
+          params: {[(this.$props.kind + "Id")]: this.$props.channelnMessageNo}
         }
         console.log(routeParam)
         this.$router.push(routeParam);
@@ -43,6 +43,7 @@ export default {
 li{
   width: 200px;
   display: inline-block;
+  cursor: pointer;
 }
 .channel::after{
   content:'#'
