@@ -1,7 +1,7 @@
 <template>
   <div class="member-board">
     <div class="title">
-        <span>#{{memberName}}</span>
+        <button>#{{memberName}}</button>
     </div>
     <div class="bookmark-wrap">
         <button class="bookmark">+ 책갈피 추가</button>
@@ -29,6 +29,18 @@ export default {
         align-items: center;
         border-bottom: solid 1px $gray-color-120;
         padding: 6px 3px;
+
+        &>button {
+            font-size: 1.5rem;
+            border-width: 0px;
+            border-radius: 6px;
+            background-color: unset;
+
+            &:hover{
+                background-color: $gray-color-190;
+            }
+        }
+
     }
 
     .bookmark-wrap{

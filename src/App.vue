@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <custom-header />
-    <side-bar class="test1"/>
-    <custom-main  class="test2"/>
+    <custom-header/>
+    <side-bar/>
+    <custom-main/>
   </div>
 </template>
 

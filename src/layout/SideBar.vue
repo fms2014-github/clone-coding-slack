@@ -4,12 +4,12 @@
       Slack 만들기
     </div>
     <side-sub-menu-vue />
-    <list @addLisItem="addLisItem" :kind="'channel'">
-      <list-item :kind="'channel'" :channelnMessageNo="listItem.channelnMessageNo" :listItem="listItem.name" v-for="listItem in listItems" :key="listItem.id" ></list-item>
+    <list @addLisItem="addChannel" :kind="'channel'">
+      <list-item :kind="'channel'" :channelnMessageNo="listItem.channelnMessageNo" :listItem="listItem.name" v-for="listItem in channel" :key="listItem.id" ></list-item>
     </list>
     <hr/>
-    <list @addLisItem="addLisItem" :kind="'directMsg'">
-      <list-item :kind="'directMsg'" :channelnMessageNo="listItem.channelnMessageNo" :listItem="listItem.name" v-for="listItem in listItems" :key="listItem.id" ></list-item>
+    <list @addLisItem="addDireceMessage" :kind="'directMsg'">
+      <list-item :kind="'directMsg'" :channelnMessageNo="listItem.channelnMessageNo" :listItem="listItem.name" v-for="listItem in directMessage" :key="listItem.id" ></list-item>
     </list>
     <MenuPopup v-if="MenuPstn" class="MenuPstn"></MenuPopup>
   </div>  
@@ -25,18 +25,33 @@ export default {
   data() {
     return {
       MenuPstn: false,
-      listItems:[{
-        name: "test1",
-        channelnMessageNo: "4523"
-      },
-      {
-        name: "test2",
-        channelnMessageNo: "4334"
-      },
-      {
-        name: "test3",
-        channelnMessageNo: "5413"
-      },
+      channel:[
+        {
+          name: "test1",
+          channelnMessageNo: "4523"
+        },
+        {
+          name: "test2",
+          channelnMessageNo: "4334"
+        },
+        {
+          name: "test3",
+          channelnMessageNo: "5413"
+        },
+      ],
+      directMessage:[
+        {
+          name: "test1",
+          channelnMessageNo: "4523"
+        },
+        {
+          name: "test2",
+          channelnMessageNo: "4334"
+        },
+        {
+          name: "test3",
+          channelnMessageNo: "5413"
+        },
       ],
     }
   },
@@ -51,14 +66,23 @@ export default {
       console.log('fdsa');
       this.MenuPstn = !this.MenuPstn;
     },
-    addLisItem() {
+    addChannel() {
       console.log("추가");
-      let len = this.$data.listItems.length + 1;
+      let len = this.$data.channel.length + 1;
       let roomData = {
         name: "test" + len,
         channelnMessageNo: "" + Math.ceil(Math.random() * 10000)
       }
-      this.$data.listItems.push(roomData);
+      this.$data.channel.push(roomData);
+    },
+    addDireceMessage() {
+      console.log("추가");
+      let len = this.$data.directMessage.length + 1;
+      let roomData = {
+        name: "test" + len,
+        channelnMessageNo: "" + Math.ceil(Math.random() * 10000)
+      }
+      this.$data.directMessage.push(roomData);
     }
   }
 }

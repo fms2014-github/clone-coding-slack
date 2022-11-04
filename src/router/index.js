@@ -4,7 +4,7 @@ import ListTest from '../views/ListTest.vue'
 import MenuTest from '../views/MenuTest.vue'
 import MainTest from '../views/MainTest.vue'
 import SideSubMenuTest from '@/views/SideSubMenuTest.vue'
-import Channel from '@/views/Chennal.vue'
+import Channel from '@/views/Channel.vue'
 import DirectMsg from '@/views/DirectMsg.vue'
 
 Vue.use(VueRouter)
@@ -48,7 +48,7 @@ const routes = [
     // which is lazy-loaded when the route is visited.
   },
   {
-    path: '/chennal/:channelId',
+    path: '/channel/:channelId',
     name: 'channel',
     component: Channel,
     // route level code-splitting
